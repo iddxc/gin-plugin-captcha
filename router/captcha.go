@@ -6,10 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type ChatRoomRouter struct{}
+type CaptchaApiRouter struct{}
 
-func (c *ChatRoomRouter) InitChatRoomRouter(Router *gin.RouterGroup) {
-	//chatRoomRouter := Router.Use(middleware.OperationRecord())
+func (c *CaptchaApiRouter) InitCaptchaApiRouter(Router *gin.RouterGroup) {
+	//captchaApiRouter := Router.Use(middleware.OperationRecord())
 	captchaRouter := Router
 	{
 		fmt.Println("captcha router init...", captchaRouter)

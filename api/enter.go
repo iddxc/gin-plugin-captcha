@@ -1,7 +1,7 @@
 package api
 
 type ApiGroup struct {
-	ChatRoomApi
+	CaptchaApi
 }
 
 var ApiGroupApp = new(ApiGroup)

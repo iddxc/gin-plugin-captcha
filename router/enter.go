@@ -1,7 +1,7 @@
 package router
 
 type RouterGroup struct {
-	ChatRoomRouter
+	CaptchaApiRouter
 }
 
 var RouterGroupApp = new(RouterGroup)
