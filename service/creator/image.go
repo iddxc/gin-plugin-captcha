@@ -3,6 +3,7 @@ package creator
 import (
 	"bytes"
 	"encoding/base64"
+	"gin-plugin-captcha/global"
 	"image"
 	"image/color"
 	"image/draw"
@@ -105,7 +106,7 @@ func CreateCImage(Width, Height int, FontSize float64) *CImage {
 		Height:   Height,
 		Fonts:    []*truetype.Font{},
 	}
-	m, _ = m.AddFont("D:\\WorkerPath\\gin-plugin-captcha\\resource\\fonts\\FZSTK.TTF")
+	m, _ = m.AddFont(global.GVA_CONFIG.FontFile)
 	return m
 }
 
