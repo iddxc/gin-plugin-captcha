@@ -58,7 +58,7 @@ func (s *CaptchaService) Verify(keyId, captcha string) (string, error) {
 	captcha = strings.ToLower(captcha)
 	val = strings.ToLower(val)
 	if err != nil {
-		return "", err
+		return "验证码错误请重试", err
 	}
 	if val != captcha {
 		return "验证码错误请重试", nil
@@ -69,7 +69,14 @@ func (s *CaptchaService) Verify(keyId, captcha string) (string, error) {
 
 func (s *CaptchaService) AddCaptcha(captcha ...string) bool {
 	pipe := global.GVA_REDIS.Pipeline()
-	pipe.SAdd(ctx, "captcha:library", captcha)
+	tempSlice := make([]string, 10)
+	for _, v := range captcha {
+		if len(v) > 6 {
+			v = v[:6]
+		}
+		tempSlice = append(tempSlice, v)
+	}
+	pipe.SAdd(ctx, "captcha:library", tempSlice)
 	pipe.Exec(ctx)
 	return true
 }

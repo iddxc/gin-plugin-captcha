@@ -50,3 +50,24 @@ func TestGetImage(t *testing.T) {
 	data, err := service.ImageCapture.GetImage(250, 80, 28, captcha)
 	fmt.Println(data, err)
 }
+
+func TestAddCaptcha(t *testing.T) {
+	stat := service.AddCaptcha("test", "admin", "badfewqref")
+	fmt.Println(stat)
+}
+
+func TestVerify(t *testing.T) {
+	// keyId:7807dc07-3529-4a8d-a561-e9b6ca7ee09c, captcha:RI%bc
+	// 错误验证码
+	msg, err := service.Verify("7807dc07-3529-4a8d-a561-e9b6ca7ee09c", "abced")
+	fmt.Println(msg, err)
+	// 错误keyId
+	msg, err = service.Verify("7807dc07-3529-4a8d-a561-e9b6ca7ee19c", "abcedf")
+	fmt.Println(msg, err)
+	// 正确样例
+	msg, err = service.Verify("7807dc07-3529-4a8d-a561-e9b6ca7ee09c", "abcedf")
+	fmt.Println(msg, err)
+	// 已使用过的验证码
+	msg, err = service.Verify("7807dc07-3529-4a8d-a561-e9b6ca7ee09c", "abcedf")
+	fmt.Println(msg, err)
+}
