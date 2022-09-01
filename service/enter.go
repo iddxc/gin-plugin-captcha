@@ -1,7 +1,7 @@
 package service
 
 type ServiceGroup struct {
-	ChatRoomService
+	CaptchaService
 }
 
 var ServiceGroupApp = new(ServiceGroup)
