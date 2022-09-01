@@ -9,9 +9,9 @@ import (
 )
 
 func init() {
-	global.GVA_CONFIG.Redis.Addr = "120.26.196.124:6379"
+	global.GVA_CONFIG.Redis.Addr = "127.0.0.1:6379"
 	global.GVA_CONFIG.Redis.DB = 0
-	global.GVA_CONFIG.Redis.Password = "520qp025"
+	global.GVA_CONFIG.Redis.Password = ""
 	initialize.Redis()
 }
 
@@ -25,9 +25,24 @@ func TestCreateCaptchaToLibrary(t *testing.T) {
 		service.LibraryCaptcha.Set(captcha)
 	}
 }
-func TestGetCaptchaString(t *testing.T) {
-	captcha := service.LibraryCaptcha.GetString()
-	fmt.Println(captcha)
+func TestGetCaptcha(t *testing.T) {
+	keyId, data, err := service.GetCaptcha("library", 5, 200, 80, 24)
+	fmt.Println("library:", keyId, data, err)
+
+	keyId, data, err = service.GetCaptcha("original", 5, 200, 80, 24)
+	fmt.Println("original:", keyId, data, err)
+
+	keyId, data, err = service.GetCaptcha("digit", 5, 200, 80, 24)
+	fmt.Println("digit:", keyId, data, err)
+
+	keyId, data, err = service.GetCaptcha("library+image", 5, 200, 80, 24)
+	fmt.Println("library+image:", keyId, data, err)
+
+	keyId, data, err = service.GetCaptcha("original+image", 5, 200, 80, 24)
+	fmt.Println("original+image", keyId, data, err)
+
+	keyId, data, err = service.GetCaptcha("digit+image", 5, 200, 80, 24)
+	fmt.Println("digit+image:", keyId, data, err)
 }
 
 func TestGetImage(t *testing.T) {

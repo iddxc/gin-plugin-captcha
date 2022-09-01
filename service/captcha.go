@@ -67,7 +67,7 @@ func (s *CaptchaService) Verify(keyId, captcha string) (string, error) {
 	return "ok", nil
 }
 
-func (c *CaptchaService) AddCaptcha(captcha ...string) bool {
+func (s *CaptchaService) AddCaptcha(captcha ...string) bool {
 	pipe := global.GVA_REDIS.Pipeline()
 	pipe.SAdd(ctx, "captcha:library", captcha)
 	pipe.Exec(ctx)

@@ -29,7 +29,7 @@ func (o *OriginalCaptcha) GetDigit(length int) string {
 	rand.Seed(time.Now().Unix())
 	captcha := ""
 	for i := 0; i < length; i++ {
-		index := rand.Intn(len(keyQuery))
+		index := rand.Intn(len(digitBytes))
 		captcha += string(digitBytes[index])
 	}
 	return captcha
