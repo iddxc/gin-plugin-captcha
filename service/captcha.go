@@ -33,13 +33,13 @@ func (s *CaptchaService) GetCaptcha(mode string, length, Width, Height int, Font
 		captcha = s.OriginalCaptcha.GetString(length)
 	case "digit":
 		captcha = s.OriginalCaptcha.GetDigit(length)
-	case "library+image":
+	case "library_image":
 		captcha = s.LibraryCaptcha.GetString()
 		data, err = s.ImageCapture.GetImage(Width, Height, FontSize, captcha)
-	case "original+image":
+	case "original_image":
 		captcha = s.OriginalCaptcha.GetString(length)
 		data, err = s.ImageCapture.GetImage(Width, Height, FontSize, captcha)
-	case "digit+image":
+	case "digit_image":
 		captcha = s.OriginalCaptcha.GetDigit(length)
 		data, err = s.ImageCapture.GetImage(Width, Height, FontSize, captcha)
 	default:
