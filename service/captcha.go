@@ -28,14 +28,11 @@ func (s *CaptchaService) GetCaptcha(mode string, length, Width, Height int, Font
 	captcha := ""
 	switch mode {
 	case "library":
-		data = s.LibraryCaptcha.GetString()
-		captcha = data
+		captcha = s.LibraryCaptcha.GetString()
 	case "original":
-		data = s.OriginalCaptcha.GetString(length)
-		captcha = data
+		captcha = s.OriginalCaptcha.GetString(length)
 	case "digit":
-		data = s.OriginalCaptcha.GetDigit(length)
-		captcha = data
+		captcha = s.OriginalCaptcha.GetDigit(length)
 	case "library+image":
 		captcha = s.LibraryCaptcha.GetString()
 		data, err = s.ImageCapture.GetImage(Width, Height, FontSize, captcha)
@@ -46,8 +43,7 @@ func (s *CaptchaService) GetCaptcha(mode string, length, Width, Height int, Font
 		captcha = s.OriginalCaptcha.GetDigit(length)
 		data, err = s.ImageCapture.GetImage(Width, Height, FontSize, captcha)
 	default:
-		data = s.OriginalCaptcha.GetString(length)
-		captcha = data
+		captcha = s.OriginalCaptcha.GetString(length)
 	}
 	keyId = uuid.NewString()
 	global.GVA_REDIS.Set(ctx, "captcha:items:"+keyId, captcha, time.Minute*10)
