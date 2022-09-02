@@ -1,8 +1,8 @@
 package router
 
 import (
+	"captcha/api"
 	"fmt"
-	"gin-plugin-captcha/api"
 
 	"github.com/gin-gonic/gin"
 )

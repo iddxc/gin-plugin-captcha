@@ -1,9 +1,9 @@
 package service
 
 import (
+	"captcha/global"
+	"captcha/initialize"
 	"fmt"
-	"gin-plugin-captcha/global"
-	"gin-plugin-captcha/initialize"
 	"testing"
 	"time"
 )

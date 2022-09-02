@@ -1,8 +1,8 @@
 package creator
 
 import (
+	"captcha/global"
 	"context"
-	"gin-plugin-captcha/global"
 )
 
 type LibraryCaptcha struct{}

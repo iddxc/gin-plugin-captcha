@@ -1,9 +1,9 @@
 package captcha
 
 import (
-	"gin-plugin-captcha/global"
-	"gin-plugin-captcha/initialize"
-	"gin-plugin-captcha/router"
+	"captcha/global"
+	"captcha/initialize"
+	"captcha/router"
 
 	"github.com/gin-gonic/gin"
 )

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"gin-plugin-captcha/global"
+	"captcha/global"
 
 	"github.com/google/uuid"
 )

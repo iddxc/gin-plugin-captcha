@@ -1,7 +1,7 @@
 package global
 
 import (
-	"gin-plugin-captcha/config"
+	"captcha/config"
 
 	"github.com/go-redis/redis/v8"
 )

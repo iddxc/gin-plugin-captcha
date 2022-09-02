@@ -2,8 +2,8 @@ package creator
 
 import (
 	"bytes"
+	"captcha/global"
 	"encoding/base64"
-	"gin-plugin-captcha/global"
 	"image"
 	"image/color"
 	"image/draw"

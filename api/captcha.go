@@ -1,9 +1,9 @@
 package api
 
 import (
-	"gin-plugin-captcha/model"
-	"gin-plugin-captcha/model/response"
-	"gin-plugin-captcha/service"
+	"captcha/model"
+	"captcha/model/response"
+	"captcha/service"
 
 	"strconv"
 

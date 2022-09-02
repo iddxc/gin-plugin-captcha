@@ -1,4 +1,4 @@
-module gin-plugin-captcha
+module captcha
 
 go 1.19
 

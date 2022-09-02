@@ -1,9 +1,9 @@
 package service
 
 import (
+	"captcha/global"
+	"captcha/service/creator"
 	"context"
-	"gin-plugin-captcha/global"
-	"gin-plugin-captcha/service/creator"
 	"strings"
 	"time"
 
