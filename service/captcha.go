@@ -68,8 +68,9 @@ func (s *CaptchaService) AddCaptcha(captcha ...string) bool {
 	pipe := global.GVA_REDIS.Pipeline()
 	tempSlice := make([]string, 10)
 	for _, v := range captcha {
-		if len(v) > 6 {
-			v = v[:6]
+		r := []rune(v)
+		if len(r) > 6 {
+			v = string(r[:6])
 		}
 		tempSlice = append(tempSlice, v)
 	}
