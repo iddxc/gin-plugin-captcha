@@ -1,11 +1,12 @@
 package service
 
 import (
-	"captcha/global"
-	"captcha/service/creator"
 	"context"
 	"strings"
 	"time"
+
+	"github.com/iddxc/gin-plugin-captcha/global"
+	"github.com/iddxc/gin-plugin-captcha/service/creator"
 
 	"github.com/google/uuid"
 )

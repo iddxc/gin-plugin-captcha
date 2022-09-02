@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"captcha/global"
+	"github.com/iddxc/gin-plugin-captcha/global"
 
 	"github.com/go-redis/redis/v8"
 )

@@ -2,7 +2,6 @@ package creator
 
 import (
 	"bytes"
-	"captcha/global"
 	"encoding/base64"
 	"image"
 	"image/color"
@@ -11,6 +10,8 @@ import (
 	"io/ioutil"
 	"math/rand"
 	"time"
+
+	"github.com/iddxc/gin-plugin-captcha/global"
 
 	"github.com/golang/freetype"
 	"github.com/golang/freetype/truetype"

@@ -1,4 +1,4 @@
-module captcha
+module github.com/iddxc/gin-plugin-captcha
 
 go 1.19
 

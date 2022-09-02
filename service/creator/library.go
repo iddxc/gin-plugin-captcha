@@ -1,8 +1,9 @@
 package creator
 
 import (
-	"captcha/global"
 	"context"
+
+	"github.com/iddxc/gin-plugin-captcha/global"
 )
 
 type LibraryCaptcha struct{}

@@ -1,9 +1,9 @@
 package captcha
 
 import (
-	"captcha/global"
-	"captcha/initialize"
-	"captcha/router"
+	"github.com/iddxc/gin-plugin-captcha/global"
+	"github.com/iddxc/gin-plugin-captcha/initialize"
+	"github.com/iddxc/gin-plugin-captcha/router"
 
 	"github.com/gin-gonic/gin"
 )

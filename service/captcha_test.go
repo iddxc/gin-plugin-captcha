@@ -1,11 +1,12 @@
 package service
 
 import (
-	"captcha/global"
-	"captcha/initialize"
 	"fmt"
 	"testing"
 	"time"
+
+	"github.com/iddxc/gin-plugin-captcha/global"
+	"github.com/iddxc/gin-plugin-captcha/initialize"
 )
 
 func init() {
